@@ -1,0 +1,129 @@
+#app {
+  background-color: #c4c4c4;
+  height: 800px;
+  max-width: 681px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.search-line {
+  margin: 16px 0;
+  border-color: black;
+}
+
+.search-input {
+  max-width: 500px;
+  height: 60px;
+  border-radius: 10px;
+  border: none;
+  outline-color: rgb(131, 128, 124);
+}
+
+input {
+  font-size: 48px;
+  margin: 0px;
+  padding: 0px;
+  text-indent: 16px;
+}
+
+::placeholder {
+  font-size: 32px;
+}
+
+li,
+ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+button {
+  background: #e27beb;
+  border: none;
+}
+.main {
+  width: 500px;
+}
+
+.repos-prev {
+  background-color: #e3e3e3;
+  border: solid 2px black;
+  border-radius: 10px;
+  height: 44px;
+  max-width: 500px;
+  margin-bottom: 16px;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 35px;
+  letter-spacing: 0em;
+  text-align: left;
+  cursor: pointer;
+}
+.repos-prev-added {
+  width: 484px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  border: none;
+  background-color: #e27beb;
+  padding: 8px 0 8px 16px;
+  position: relative;
+}
+.add-repos-list {
+  background-color: #c4c4c4;
+}
+
+.repos-prev-name {
+  padding-left: 16px;
+}
+
+.add-repos-wrapper {
+  margin-top: 32px;
+  background-color: black;
+}
+
+.button-main {
+  width: 40px;
+  height: 40px;
+}
+
+.elAdded {
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.bth {
+  position: absolute;
+  top: 35px;
+  right: 40px;
+  width: 40px;
+  height: 40px;
+  opacity: 0.2;
+  cursor: pointer;
+  transition: opacity ease 0.5s;
+}
+
+.bth:hover {
+  opacity: 1;
+}
+
+.bth::before,
+.bth::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  display: block;
+  width: 45px;
+  height: 3px;
+  background: #ff0000;
+}
+
+.bth::before {
+  transform: rotate(45deg);
+}
+
+.bth::after {
+  transform: rotate(-45deg);
+}
