@@ -57,6 +57,7 @@ button {
   letter-spacing: 0em;
   text-align: left;
   cursor: pointer;
+  padding-left: 8px;
 }
 .repos-prev-added {
   width: 484px;
@@ -66,6 +67,7 @@ button {
   background-color: #e27beb;
   padding: 8px 0 8px 16px;
   position: relative;
+  white-space: pre;
 }
 .add-repos-list {
   background-color: #c4c4c4;
