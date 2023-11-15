@@ -9,19 +9,18 @@ export class Search {
   }
 
   loadRepos() {
-    const searchValue = this.view.searchInput.value
-    if (searchValue) {
+    if (this.view.searchInput.value) {
       this.clearRepos()
-      this.reposRequset(searchValue)
+      this.reposRequest(this.view.searchInput.value)
     } else {
       this.clearRepos()
     }
   }
   loadMoreRepos() {
-    this.reposRequset(this.view.searchInput.value)
+    this.reposRequest(this.view.searchInput.value)
   }
 
-  reposRequset(searchValue) {
+  reposRequest(searchValue) {
     this.api.loadRepos(searchValue).then(res => {
       if (res.ok) {
         res.json().then(res => {
@@ -33,7 +32,7 @@ export class Search {
   }
 
   clearRepos() {
-    this.view.reposList.innerHTML = ''
+    this.view.reposList.textContent = ''
   }
 
   debounce(func, wait, immediate) {
