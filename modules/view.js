@@ -34,13 +34,13 @@ export class View {
 
   createRepos(reposData) {
     const reposElement = this.createElement('li', 'repos-prev')
-    reposElement.innerHTML = `<span class='repos-prev-name'>${reposData.name}</span>`
+    reposElement.textContent = reposData.name
     this.reposList.append(reposElement)
     reposElement.addEventListener('click', () => this.showReposData(reposData))
   }
 
   clearInput() {
-    this.addReposWrapper.innerHTML = ''
+    this.addReposWrapper.textContent = ''
   }
 
   showReposData(name) {
@@ -49,13 +49,21 @@ export class View {
     createBth.addEventListener('click', function () {
       reposElementAdded.remove()
     })
-    reposElementAdded.innerHTML =
-      `<span class='elAdded'>Name: ${name.name}</span>` +
-      `
-    <br><span class='elAdded'>Owner: ${name.owner.login}</span><br>` +
-      `<span class='elAdded'>Stars: ${name.stargazers_count}</span>`
+    const reposElementSpan = this.createElement('span', 'elAdded')
+    reposElementSpan.textContent = `Name: ${name.name}
+Owner: ${name.owner.login}
+Stars: ${name.stargazers_count}`
+
+    reposElementAdded.append(reposElementSpan)
     this.addReposList.append(reposElementAdded)
 
     reposElementAdded.appendChild(createBth)
+
+    this.searchInput.value = ''
+    if (this.searchInput.value === undefined) {
+      console.log('great')
+    } else {
+      this.reposList.textContent = ''
+    }
   }
 }
