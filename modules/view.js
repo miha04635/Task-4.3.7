@@ -61,7 +61,6 @@ Stars: ${name.stargazers_count}`
 
     this.searchInput.value = ''
     if (this.searchInput.value === undefined) {
-      console.log('great')
     } else {
       this.reposList.textContent = ''
     }
