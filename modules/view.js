@@ -60,9 +60,7 @@ Stars: ${name.stargazers_count}`
     reposElementAdded.appendChild(createBth)
 
     this.searchInput.value = ''
-    if (this.searchInput.value === undefined) {
-    } else {
-      this.reposList.textContent = ''
+    this.reposList.textContent = ''
     }
   }
 }
