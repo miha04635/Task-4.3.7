@@ -61,6 +61,5 @@ Stars: ${name.stargazers_count}`
 
     this.searchInput.value = ''
     this.reposList.textContent = ''
-    }
   }
 }
