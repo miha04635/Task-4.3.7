@@ -2,22 +2,22 @@ export class Search {
   constructor(view, api) {
     this.view = view
     this.api = api
-    this.view.searchInput.addEventListener(
-      'keyup',
-      this.debounce(this.loadRepos.bind(this), 500)
+    this.view.searchInput.oninput = this.debounce(
+      this.loadRepos.bind(this),
+      500
     )
   }
 
-  loadRepos() {
-    if (this.view.searchInput.value) {
+  loadRepos(event) {
+    if (event.target.value) {
       this.clearRepos()
-      this.reposRequest(this.view.searchInput.value)
+      this.reposRequest(event.target.value)
     } else {
       this.clearRepos()
     }
   }
-  loadMoreRepos() {
-    this.reposRequest(this.view.searchInput.value)
+  loadMoreRepos(event) {
+    this.reposRequest(event.target.value)
   }
 
   reposRequest(searchValue) {
@@ -26,7 +26,6 @@ export class Search {
         res.json().then(res => {
           res.items.forEach(repo => this.view.createRepos(repo))
         })
-      } else {
       }
     })
   }
